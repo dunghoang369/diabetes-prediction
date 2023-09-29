@@ -4,6 +4,7 @@
 + Install requirements: ```pip install -r requirement.txt```
 + EDA + Modeling + Training code: [notebooks/Diabetes_prediction.ipynb](notebooks/Diabetes_prediction.ipynb)
 + Data: [data/diabetes.csv](data/diabetes.csv)
++ Docker engine
 + Docker images: [dunghoang99/diabete-prediction-api:latest](https://hub.docker.com/repository/docker/dunghoang99/diabete-prediction-api/general), [dunghoang99/diabete-api-metrics:v1.0.0](https://hub.docker.com/repository/docker/dunghoang99/diabetes-api-metrics/general), [fullstackdatascience/jenkins:lts](https://hub.docker.com/r/fullstackdatascience/jenkins/tags) and [fullstackdatascience/jenkins-k8s/lts](https://hub.docker.com/r/fullstackdatascience/jenkins-k8s)
 ## 2. Fastapi
 ### FastAPI Service Architecture
@@ -52,6 +53,11 @@ Last but not least, sometimes you need to trace some block code processing time,
 In Jaeger UI, all block code that you want to trace time will be displayed on right hand sides.
 ### 4 Jenkins
 #### How to guide
+
++ ```docker compose -f jenkins_docker/docker-compose.yml up -d```
+
++ Jenkins service was exposed at port 8081, we can access by this port
+
 + Connect to github repo using ngrok. if 200 OK, you have already connect jenkins to github. 
 ![](images/ngrok_to_jenkin.png)
 

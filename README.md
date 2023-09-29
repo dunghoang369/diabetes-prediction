@@ -52,9 +52,13 @@ Last but not least, sometimes you need to trace some block code processing time,
 In Jaeger UI, all block code that you want to trace time will be displayed on right hand sides.
 ### 4 Jenkins
 #### How to guide
-+ Connect to github repo using ngrok. if 200 OK, you have already connect jenkins to github. Additionally, in **Let me select individual events** in **Setting/Webhooks/Manage webhook**, tick **Pull requests** and **Pushes** to inform jenkins start to run whenever we push or pull code from github. 
++ Connect to github repo using ngrok. if 200 OK, you have already connect jenkins to github. 
 ![](images/ngrok_to_jenkin.png)
+
 ![](images/jenkins_webhook.png)
+
+Additionally, in **Let me select individual events** in **Setting/Webhooks/Manage webhook**, tick **Pull requests** and **Pushes** to inform jenkins start to run whenever we push or pull code from github.
+
 ![](images/events_github.png)
 + 
 

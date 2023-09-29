@@ -1,0 +1,4 @@
+image:
+  repository: dunghoang99/diabete-prediction-api
+  tag: "latest"
+  pullPolicy: Always

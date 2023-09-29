@@ -1,0 +1,13 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+  name: diabetes-api
+  namespace: default
+spec:
+  endpoints:
+  - interval: 10s
+    port: web
+  selector:
+    matchLabels:
+      app: diabetes-api

@@ -1,0 +1,41 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: {{ .Release.Name }}
+  namespace: default
+spec:
+  gateways:
+  - default/{{ .Release.Name }}-gateway
+  hosts:
+  - '*'
+  http:
+  - match:
+    - uri:
+        prefix: /docs
+    rewrite:
+      uri: /docs
+    route:
+    - destination:
+        host: {{ .Release.Name }}.default.svc.cluster.local
+        port:
+          number: 4001
+  - match:
+    - uri:
+        prefix: /openapi.json
+    rewrite:
+      uri: /openapi.json
+    route:
+    - destination:
+        host: {{ .Release.Name }}.default.svc.cluster.local
+        port:
+          number: 4001
+  - match:
+    - uri:
+        prefix: /predict
+    rewrite:
+      uri: /predict
+    route:
+    - destination:
+        host: {{ .Release.Name }}.default.svc.cluster.local
+        port:
+          number: 4001

@@ -1,0 +1,21 @@
+FROM python:3.8
+
+# Create a folder /app is the current working directory
+WORKDIR /app
+
+# Copy necessary files to app
+COPY ./metrics.py /app
+
+COPY ./requirements.txt /app
+
+COPY ./models /app/models
+
+# Port will be exposed
+EXPOSE 4001
+
+EXPOSE 8099
+
+# Install necessary libraries
+RUN pip install -r requirements.txt --no-cache-dir
+
+CMD ["python", "metrics.py"]

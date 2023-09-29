@@ -1,0 +1,10 @@
+replicaCount: 
+  number: "2"
+
+image:
+  repository: dunghoang99/diabete-prediction-api
+  tag: "latest"
+  pullPolicy: Always
+
+env:
+  name: dev

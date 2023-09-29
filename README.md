@@ -60,7 +60,34 @@ In Jaeger UI, all block code that you want to trace time will be displayed on ri
 Additionally, in **Let me select individual events** in **Setting/Webhooks/Manage webhook**, tick **Pull requests** and **Pushes** to inform jenkins start to run whenever we push or pull code from github.
 
 ![](images/events_github.png)
-+ 
+
++ Access to Jenkins, click **New Item** to create new **Multibranch Pipeline**
+
+![](images/create_multibranch_.png)
+
++ In **Configuration/Branch Sources**, choose **GitHub** in **Add source**
+
+![](images/addsource.png)
+
++ Then click **Add**, choose multibranch pipeline has created to configure github account
+
+![](images/github_account_config.png)
+
++ After that, in **Credentials**, click **global** in **Stores scoped**, then click **Add Credentials** to add Docker Hub account. 
+
+![](images/Credentials.png)
+
+![](images/in_credentials.png)
+
+![](images/dockerhub_account_config.png)
+
+Username is username of docker hub and password that we set in docker hub.
+
+![](images/dockerhub_password.png)
+
++ Whenever code is push to github or pull from github, Jenkins will take care all of this
+
++ Enjoy achivement!!!
 
 ## 5. K8s
 ### 5.1 GKE + Jenkins

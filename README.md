@@ -96,6 +96,18 @@ Username is username of docker hub and password that we set in docker hub.
 + Enjoy achivement!!!
 
 ## 5. Google Kubernetes Engine
-+ Before moving on to the next section, you need to have an active Google Cloud Platform account, install gcloud CLI according to this link https://cloud.google.com/sdk/docs/install#deb and authenticate with GCP by using this command ```gcloud auth application-default login```
+
++ Before moving on to the next section, you need to have an active Google Cloud Platform account, install gcloud CLI according to this link https://cloud.google.com/sdk/docs/install#deb, authenticate with GCP by using this command ```gcloud auth application-default login``` and create **service account file** by using this file [pdf_files/Prepare ansible.pdf](pdf_files/Prepare%20ansible.pdf)
+
 ### 5.1 GKE + Jenkins
+#### How to guide
+
++ ```cd ansible/deploy_jenkins```
+
++ ```ansible-playbook create_compute_instance.yaml``` to create virtual machine instance using ansible. Configuration of machine was defined in file **create_compute_instance.yaml**
+
++ ```ansible-playbook -i ../inventory deploy_jenkins.yml``` to install jenkins. Note, ip addresses in inventory file need to be modified to suitable with external address of nodes at that time.
+
+
+
 ### 5.2 GKE + Monitoring services

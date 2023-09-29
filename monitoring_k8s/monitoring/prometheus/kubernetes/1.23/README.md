@@ -27,7 +27,7 @@ repository [here](https://github.com/prometheus-operator/kube-prometheus)
 Now according to the compatibility matrix, we will need `release-0.10` to be compatible with
 Kubernetes 1.23. </br>
 
-Let's use docker to grab it! 
+Let's use docker to grab it!
 
 ```
 docker run -it -v ${PWD}:/work -w /work alpine sh
@@ -105,7 +105,7 @@ prometheus-k8s-1                       2/2     Running   0          26m
 prometheus-operator-6dc9f66cb7-8bg77   2/2     Running   0          27m
 ```
 
-# View Dashboards 
+# View Dashboards
 
 You can access the dashboards by using `port-forward` to access Grafana.
 It does not have a public endpoint for security reasons
@@ -133,7 +133,7 @@ kubectl -n monitoring port-forward svc/grafana 3000
 
 Now our datasource should be healthy.
 
-## Check Prometheus 
+## Check Prometheus
 
 Similar to checking Grafana, we can also check Prometheus:
 
@@ -141,7 +141,7 @@ Similar to checking Grafana, we can also check Prometheus:
 kubectl -n monitoring port-forward svc/prometheus-operated 9090
 ```
 
-## Check Service Monitors 
+## Check Service Monitors
 
 To see how Prometheus is configured on what to scrape , we list service monitors
 

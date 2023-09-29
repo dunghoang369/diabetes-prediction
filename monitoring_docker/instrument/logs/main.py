@@ -10,6 +10,7 @@ from PIL import Image
 
 app = FastAPI()
 
+
 @app.post("/ocr")
 async def ocr(file: UploadFile = File(...)):
     reader = easyocr.Reader(

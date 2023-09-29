@@ -31,7 +31,7 @@ services:
   prometheus:
     container_name: prometheus-svc
     image: prom/prometheus
-    ports: 
+    ports:
       - "9091:9090"
     command: --config.file=/etc/prometheus/prometheus.yaml
     volumes:

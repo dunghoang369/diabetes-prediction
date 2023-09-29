@@ -1,12 +1,12 @@
 # Introduction to Fluentd on Kubernetes
 
-<a href="https://youtu.be/6kmHvXdAzIM" title="fluentd-k8s"><img src="https://i.ytimg.com/vi/6kmHvXdAzIM/hqdefault.jpg" width="20%" alt="fluentd-k8s" /></a> 
+<a href="https://youtu.be/6kmHvXdAzIM" title="fluentd-k8s"><img src="https://i.ytimg.com/vi/6kmHvXdAzIM/hqdefault.jpg" width="20%" alt="fluentd-k8s" /></a>
 
-## Prerequisites 
+## Prerequisites
 
-You will need a basic understanding of Fluentd before you attempt to run it on Kubernetes.<br/> 
-Fluentd and Kubernetes have a bunch of moving parts.<br/> 
-To understand the basics of Fluentd, I highly recommend you start with this video: <br/> 
+You will need a basic understanding of Fluentd before you attempt to run it on Kubernetes.<br/>
+Fluentd and Kubernetes have a bunch of moving parts.<br/>
+To understand the basics of Fluentd, I highly recommend you start with this video: <br/>
 
 <a href="https://youtu.be/Gp0-7oVOtPw" title="Fluentd"><img src="https://i.ytimg.com/vi/Gp0-7oVOtPw/hqdefault.jpg" width="50%" height="50%" alt="Fluentd" /></a>
 
@@ -67,7 +67,7 @@ kubectl create ns fluentd
 ```
 ## Fluentd Configmap
 
-In my [fluentd introduction video](https://youtu.be/Gp0-7oVOtPw), I talk about how `fluentd` allows us to simplify our configs using the `include` statement. <br/> 
+In my [fluentd introduction video](https://youtu.be/Gp0-7oVOtPw), I talk about how `fluentd` allows us to simplify our configs using the `include` statement. <br/>
 This helps us prevent having a large complex file.
 
 <br/>
@@ -94,7 +94,7 @@ kubectl apply -f .\monitoring\logging\fluentd\kubernetes\fluentd-configmap.yaml
 Let's deploy our `daemonset`:
 
 ```
-kubectl apply -f .\monitoring\logging\fluentd\kubernetes\fluentd-rbac.yaml 
+kubectl apply -f .\monitoring\logging\fluentd\kubernetes\fluentd-rbac.yaml
 kubectl apply -f .\monitoring\logging\fluentd\kubernetes\fluentd.yaml
 kubectl -n fluentd get pods
 

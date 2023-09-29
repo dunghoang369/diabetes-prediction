@@ -13,5 +13,5 @@ spec:
       protocol: TCP
       targetPort: 4001
       nodePort: 30000
-      
+
   type: NodePort

@@ -58,7 +58,7 @@ In Jaeger UI, all block code that you want to trace time will be displayed on ri
 
 + Jenkins service was exposed at port 8081, we can access by this port
 
-+ Connect to github repo using ngrok. if 200 OK, you have already connect jenkins to github. 
++ Connect to github repo using ngrok. if 200 OK, you have already connect jenkins to github.
 ![](images/ngrok_to_jenkin.png)
 
 ![](images/jenkins_webhook.png)
@@ -79,7 +79,7 @@ Additionally, in **Let me select individual events** in **Setting/Webhooks/Manag
 
 ![](images/github_account_config.png)
 
-+ After that, in **Credentials**, click **global** in **Stores scoped**, then click **Add Credentials** to add Docker Hub account. 
++ After that, in **Credentials**, click **global** in **Stores scoped**, then click **Add Credentials** to add Docker Hub account.
 
 ![](images/Credentials.png)
 
@@ -96,6 +96,6 @@ Username is username of docker hub and password that we set in docker hub.
 + Enjoy achivement!!!
 
 ## 5. Google Kubernetes Engine
-+ Before moving on to the next section, you need to have an active Google Cloud Platform account, install gcloud CLI according to this link https://cloud.google.com/sdk/docs/install#deb and authenticate with GCP by using this command ```gcloud auth application-default login``` 
++ Before moving on to the next section, you need to have an active Google Cloud Platform account, install gcloud CLI according to this link https://cloud.google.com/sdk/docs/install#deb and authenticate with GCP by using this command ```gcloud auth application-default login```
 ### 5.1 GKE + Jenkins
 ### 5.2 GKE + Monitoring services

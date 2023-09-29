@@ -1,4 +1,4 @@
-replicaCount: 
+replicaCount:
   number: "2"
 
 image:

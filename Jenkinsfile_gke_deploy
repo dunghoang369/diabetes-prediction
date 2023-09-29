@@ -27,7 +27,7 @@ pipeline {
             steps {
                 script {
                     container('helm') {
-                        sh("helm upgrade --install svc ./service_k8s/service_wo_ingress --namespace model-serving") 
+                        sh("helm upgrade --install svc ./service_k8s/service_wo_ingress --namespace model-serving")
                     }
                 }
             }

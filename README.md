@@ -52,7 +52,10 @@ Last but not least, sometimes you need to trace some block code processing time,
 In Jaeger UI, all block code that you want to trace time will be displayed on right hand sides.
 ### 4 Jenkins
 #### How to guide
-+ Connect to github repo using ngrok
++ Connect to github repo using ngrok. if 200 OK, you have already connect jenkins to github
+![](images/ngrok_to_jenkin.png)
+
++ 
 
 ## 5. K8s
 ### 5.1 GKE + Jenkins

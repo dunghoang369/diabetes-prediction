@@ -95,6 +95,7 @@ Username is username of docker hub and password that we set in docker hub.
 
 + Enjoy achivement!!!
 
-## 5. K8s
+## 5. Google Kubernetes Engine
++ Before moving on to the next section, you need to have an active Google Cloud Platform account, install gcloud CLI according to this link https://cloud.google.com/sdk/docs/install#deb and authenticate with GCP by using this command ```gcloud auth application-default login``` 
 ### 5.1 GKE + Jenkins
 ### 5.2 GKE + Monitoring services

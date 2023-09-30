@@ -149,6 +149,14 @@ Username is username of docker hub and password that we set in docker hub.
 
         + **Jenkins URL** is your external ip of node is running, in my case is ```http://34.148.249.129:8081```
 
+    + Provide some permissions for Jenkins to apply
+        + ```shell
+            kubectl create clusterrolebinding cluster-admin-binding \
+            --clusterrole=cluster-admin --user=system:anonymous
+
+            kubectl create clusterrolebinding cluster-admin-default-binding --clusterrole=cluster-admin --user=system:serviceaccount:default:default
+            ```
+
     + After all, CICD pipeline is set up and it will run whenever you push, pull code
 
 
@@ -187,4 +195,10 @@ Username is username of docker hub and password that we set in docker hub.
         kubens nginx-ingress # Switch to the new namespace
         cd nginx-ingress
         helm upgrade --install nginx-ingress-controller .
+        ```
+
++ Then install prometheus and grafana:
+    + ```shell
+        kubectl create -f ./monitoring/prometheus/kubernetes/1.23/manifests/setup/
+        kubectl create -f ./monitoring/prometheus/kubernetes/1.23/manifests/
         ```

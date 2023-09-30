@@ -5,7 +5,11 @@
 + EDA + Modeling + Training code: [notebooks/Diabetes_prediction.ipynb](notebooks/Diabetes_prediction.ipynb)
 + Data: [data/diabetes.csv](data/diabetes.csv)
 + Docker engine
-+ Docker images: [dunghoang99/diabete-prediction-api:latest](https://hub.docker.com/repository/docker/dunghoang99/diabete-prediction-api/general), [dunghoang99/diabete-api-metrics:v1.0.0](https://hub.docker.com/repository/docker/dunghoang99/diabetes-api-metrics/general), [fullstackdatascience/jenkins:lts](https://hub.docker.com/r/fullstackdatascience/jenkins/tags) and [fullstackdatascience/jenkins-k8s/lts](https://hub.docker.com/r/fullstackdatascience/jenkins-k8s)
++ Docker images:
+    + [dunghoang99/diabete-prediction-api:latest](https://hub.docker.com/repository/docker/dunghoang99/diabete-prediction-api/general): build diabetes prediction service
+    + [dunghoang99/diabete-api-metrics:v1.0.0](https://hub.docker.com/repository/docker/dunghoang99/diabetes-api-metrics/general): build iabetes prediction service combined with custom metrics using opentelemetry
+    + [fullstackdatascience/jenkins:lts](https://hub.docker.com/r/fullstackdatascience/jenkins/tags): build Jenkins service
+    + [fullstackdatascience/jenkins-k8s/lts](https://hub.docker.com/r/fullstackdatascience/jenkins-k8s): build Jenkins service + Helm
 ## 2. Fastapi
 ### FastAPI Service Architecture
 ![](images/Fastapi_architecture.png)

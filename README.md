@@ -154,4 +154,37 @@ Username is username of docker hub and password that we set in docker hub.
 
 ### 5.2. GKE + Monitoring services
 #### GKE Service Architecture
+
 ![](images/gke_monitoring.png)
+
+#### How to guide
+
++ To implement this section, you need to switch from autopilot to standard mode when you create GKE
+
+![](images/switch_to_standard_mode.png)
+
++ Then click **create** to create GKE
+
+![](images/Create_gke.png)
+
++ Wait until GKE is created, click **Connect**
+
+![](images/connect_gke.png)
+
++ After that, we have this pop up window, click **Copy to clipboard**
+
+![](images/window_gke.png)
+
++ Paste and run this command at your local terminal to connect to cluster
+
+![](images/connect_gke.png)
+
++ ```kubectx gke_asr-callcenter_us-central1-c_my-first-cluster-1``` to switch cluster
+
++ Install Nginx Controller as follow:
+    + ```shell
+        kubectl create ns nginx-ingress # Create a new namespace
+        kubens nginx-ingress # Switch to the new namespace
+        cd nginx-ingress
+        helm upgrade --install nginx-ingress-controller .
+        ```

@@ -14,7 +14,7 @@
 ### FastAPI Service Architecture
 ![](images/Fastapi_architecture.png)
 ### How to guide
-+ ```uvicorn main:app --host 0.0.0.0 --port 4001 --reload``` or ```docker pull dunghoang99/diabete-prediction-api:latest | docker run -p 4001:4001 dunghoang99/diabete-prediction-api:latest```
++ ```uvicorn main:app --host 0.0.0.0 --port 4001 --reload``` or ```docker pull dunghoang99/diabete-prediction-api:latest && docker run -p 4001:4001 dunghoang99/diabete-prediction-api:latest```
 + ```ngrok http 4001```
 + After that, you can get this to address (in my case is https://6207-171-232-89-217.ngrok-free.app, this address will be generated random) to access the service
 ![](images/ngrok.png)

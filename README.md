@@ -160,7 +160,7 @@ Username is username of docker hub and password that we set in docker hub.
     + After all, CICD pipeline is set up and it will run whenever you push, pull code
 
 
-### 5.2. GKE + Monitoring services
+### 5.2. GKE + deploy app and monitoring services
 #### GKE Service Architecture
 
 ![](images/gke_monitoring.png)

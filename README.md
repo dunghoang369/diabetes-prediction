@@ -149,7 +149,7 @@ Username is username of docker hub and password that we set in docker hub.
 
         + **Jenkins URL** is your external ip of node is running, in my case is ```http://34.148.249.129:8081```
 
-    + Provide some permissions for Jenkins to apply
+    + Finally, provide some permissions for Jenkins to apply
         + ```shell
             kubectl create clusterrolebinding cluster-admin-binding \
             --clusterrole=cluster-admin --user=system:anonymous
@@ -193,12 +193,27 @@ Username is username of docker hub and password that we set in docker hub.
     + ```shell
         kubectl create ns nginx-ingress # Create a new namespace
         kubens nginx-ingress # Switch to the new namespace
-        cd nginx-ingress
-        helm upgrade --install nginx-ingress-controller .
+        helm upgrade --install nginx-ingress-controller ./service_k8s/nginx-ingress
         ```
+    ![](images/nginx_install.png)
 
 + Then install prometheus and grafana:
     + ```shell
-        kubectl create -f ./monitoring/prometheus/kubernetes/1.23/manifests/setup/
-        kubectl create -f ./monitoring/prometheus/kubernetes/1.23/manifests/
+        kubectl create -f ./monitoring_k8s/monitoring/prometheus/kubernetes/1.23/manifests/setup/
+        kubectl create -f ./monitoring_k8s/monitoring/prometheus/kubernetes/1.23/manifests/
         ```
+    + ```kubectl apply -n monitoring -f ./monitoring_k8s/service_monitor/prometheus.yaml```
+
++ ```kubens default```
+
++ ```kubectl apply -f ./monitoring_k8s/service_monitor/servicemonitor.yaml```
+
++ ```helm upgrade --install diabetes-api ./service_k8s/service_ingress```
+
+![](images/app_k8s.png)
+
++ ```sudo vim /etc/hosts``` to modify nginx ingress address to access to service, in my case is **35.238.122.90   diabetes.example.com**
+
+![](images/ingress-k8s.png)
+
++ ```kubectl -n monitoring port-forward prometheus-applications-0 9090```, then you can access prometheus service at port 9090 on localhost.

@@ -1,4 +1,21 @@
 # diabetes_prediction
+
+## Overall system architecture deploy on k8s:
+
+![](images/gke_monitoring.png)
+
+## Note:
++ **jenkins_docker** folder: deploy jenkins using docker
++ **monitoring_docker** folder: deploy observable systems using docker
++ **monitoring_k8s** folder: deploy observable systems using k8s
+    + **monitoring**: install necessary objects to deploy Prometheus + Grafana services
+    + **service_monitor**: set up object to scape custom metrics from diabetes service
++ **service_k8s** folder: deploy service using k8s
+    + **diabetes_prediction_chart** folder: using istio ingress gateway + virtual service to access to diabetes service in the cluster
+    + **nginx-ingress** folder: using to istall nginx
+    + **service_ingress** folder: using nginx ingress to access to diabetes service in the cluster
+    + **service_wo_ingress** foler: using loadbalancer to access to diabetes service in the cluster
+
 ## 1. Installation
 + Tested on Python 3.7 (recommended to use a virtual environment such as Conda)
 + Install requirements: ```pip install -r requirement.txt```
@@ -165,9 +182,6 @@ Username is username of docker hub and password that we set in docker hub.
 
 
 ### 5.2. GKE + deploy app and monitoring services
-#### GKE Service Architecture
-
-![](images/gke_monitoring.png)
 
 #### How to guide
 
@@ -221,16 +235,3 @@ Username is username of docker hub and password that we set in docker hub.
 ![](images/ingress-k8s.png)
 
 + ```kubectl -n monitoring port-forward prometheus-applications-0 9090```, then you can access prometheus service at port 9090 on localhost.
-
-
-## Note:
-+ **jenkins_docker** folder: deploy jenkins using docker
-+ **monitoring_docker** folder: deploy observable systems using docker
-+ **monitoring_k8s** folder: deploy observable systems using k8s
-    + **monitoring**: install necessary objects to deploy Prometheus + Grafana services
-    + **service_monitor**: set up object to scape custom metrics from diabetes service
-+ **service_k8s** folder: deploy service using k8s
-    + **diabetes_prediction_chart** folder: using istio ingress gateway + virtual service to access to diabetes service in the cluster
-    + **nginx-ingress** folder: using to istall nginx
-    + **service_ingress** folder: using nginx ingress to access to diabetes service in the cluster
-    + **service_wo_ingress** foler: using loadbalancer to access to diabetes service in the cluster

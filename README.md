@@ -99,7 +99,7 @@ Username is username of docker hub and password that we set in docker hub.
 
 + Before moving on to the next section, you need to have an active Google Cloud Platform account, install gcloud CLI according to this link https://cloud.google.com/sdk/docs/install#deb, authenticate with GCP by using this command ```gcloud auth application-default login``` and create **service account file** by using this file [pdf_files/Prepare_ansible.pdf](pdf_files/Prepare_ansible.pdf) for later used by ansible
 
-### 5.1 GKE + Jenkins
+### 5.1. GKE + Jenkins
 #### How to guide
 
 + ```cd ansible/deploy_jenkins```
@@ -152,4 +152,6 @@ Username is username of docker hub and password that we set in docker hub.
     + After all, CICD pipeline is set up and it will run whenever you push, pull code
 
 
-### 5.2 GKE + Monitoring services
+### 5.2. GKE + Monitoring services
+#### GKE Service Architecture
+![](images/gke_monitoring.png)
